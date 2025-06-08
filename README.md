@@ -2,8 +2,8 @@
 
 This repository contains two Dockerized projects:
 
-**Backend** (`candidate-api`): REST API built with NestJS to process elements of a form and an .xls or .xlsx file and return the processed data in json.
-**Frontend** (`candidate-frontend`): Client application in Angular to interact with the API, display a list of candidates and add candidates from a form.
+* **Backend** (`candidate-api`): REST API built with NestJS to process elements of a form and an .xls or .xlsx file and return the processed data in json.
+* **Frontend** (`candidate-frontend`): Client application in Angular to interact with the API, display a list of candidates and add candidates from a form.
 
 ---
 
