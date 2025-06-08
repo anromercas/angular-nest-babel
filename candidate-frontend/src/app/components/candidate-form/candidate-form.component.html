@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="candidate-form">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" type="text" />
+    <mat-error *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+      El nombre es obligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="surname" type="text" />
+    <mat-error *ngIf="form.get('surname')?.hasError('required') && form.get('surname')?.touched">
+      El apellido es obligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <div class="full-width mb-1">
+    <button type="button" mat-stroked-button color="primary" (click)="fileInput.click()">
+      Seleccionar Excel
+    </button>
+    <input #fileInput type="file" hidden (change)="onFileSelected($event)" accept=".xlsx, .xls" />
+    <div class="mat-error" *ngIf="form.get('file')?.hasError('required') && form.get('file')?.touched">
+      El archivo es obligatorio
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" [disabled]="form.invalid || isSubmitting" type="submit" class="full-width mt-1 mb-1">
+    {{ isSubmitting ? 'Cargando...' : 'Cargar candidato' }}
+  </button>
+
+  <div *ngIf="errorMsg" class="error-text">
+    {{ errorMsg }}
+  </div>
+</form>

@@ -1,0 +1,60 @@
+# Compiled output
+./candidate-frontend/dist
+./candidate-api/dist
+./candidate-frontend/tmp
+./candidate-frontend/out-tsc
+./candidate-frontend/bazel-out
+./candidate-frontend/node_modules
+./candidate-api/node_modules
+./candidate-api/build
+
+# Tests
+./candidate-api/coverage
+./candidate-frontend/coverage
+./candidate-api/.nyc_output
+
+# dotenv environment variable files
+./candidate-api/.env
+./candidate-frontend/.env
+./candidate-frontend/.env.development.local
+./candidate-frontend/.env.test.local
+./candidate-frontend/.env.production.local
+./candidate-frontend/.env.local
+./candidate-api/.env.development.local
+./candidate-api/.env.test.local
+./candidate-api/.env.production.local
+./candidate-api/.env.local
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+
+
+

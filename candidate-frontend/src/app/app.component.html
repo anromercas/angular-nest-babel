@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>Gestión de Candidatos</span>
+</mat-toolbar>
+
+<div class="container">
+  <app-candidate-form (candidateAdded)="onCandidateAdded($event)"></app-candidate-form>
+
+  <mat-slide-toggle [checked]="highlightNew()" (change)="highlightNew.set($event.checked)">
+    Resaltar último añadido
+  </mat-slide-toggle>
+
+  <app-candidate-list [candidates]="candidates()" [lastAddedCandidate]="lastAddedCandidate()"
+    [highlightNew]="highlightNew()"></app-candidate-list>
+</div>

@@ -1,0 +1,4 @@
+.new-row {
+  background-color: rgba(76, 175, 80, 0.2);
+  transition: background-color 0.5s ease-out;
+}

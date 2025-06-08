@@ -1,0 +1,56 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8 full-width-table"
+>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+  </ng-container>
+
+  <!-- Surname Column -->
+  <ng-container matColumnDef="surname">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let element"> {{ element.surname }} </td>
+  </ng-container>
+
+  <!-- Seniority Column -->
+  <ng-container matColumnDef="seniority">
+    <th mat-header-cell *matHeaderCellDef> Seniority </th>
+    <td mat-cell *matCellDef="let element"> {{ element.seniority }} </td>
+  </ng-container>
+
+  <!-- Years Column -->
+  <ng-container matColumnDef="years">
+    <th mat-header-cell *matHeaderCellDef> Años Exp. </th>
+    <td mat-cell *matCellDef="let element"> {{ element.years }} </td>
+  </ng-container>
+
+  <!-- Availability Column -->
+  <ng-container matColumnDef="availability">
+    <th mat-header-cell *matHeaderCellDef> Disponible </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.availability ? 'Sí' : 'No' }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    [class.new-row]="isNew(row)"
+  ></tr>
+</table>
+
+<mat-paginator
+  [length]="dataSource.data.length"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+>
+</mat-paginator>
+
+<div *ngIf="dataSource.data.length === 0" class="no-data mt-1">
+  No hay candidatos cargados.
+</div>
